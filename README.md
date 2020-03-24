@@ -1,6 +1,6 @@
-# FlaskTodoList
+# Flask Todo List
 
-ToDo List built with Flask. It uses MYSQL database.
+Todo List built with Flask. It uses MYSQL database.
 
 # Setup
 
