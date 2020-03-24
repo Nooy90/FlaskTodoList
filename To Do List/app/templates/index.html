@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"><!-- Font Awesome CDN-->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet" type="text/css">
+	<title>To Do List</title>
+</head>
+<body>
+	<div class="todo-box">
+		<div class="contain" id="containid">
+			<div class="header">
+				<ul class="items">
+					<li class="heading">
+						<h1 class="todo-header">Todo List</h1>
+					</li>
+					<li class="icon"><i class="fa fa-plus" id="changeclick" onclick="form()"></i></li>
+				</ul>
+			</div>
+		</div><!-- Input Drop Down-->
+		<div class="form-dropdown" id="form">
+			<form method="post">
+				<input class="input-box" name="listitem" placeholder="Add New Todo Item" required="" type="input">
+			</form>
+		</div>{% if items != [] %}
+		<div class="contain-items" id="containitems">
+			{% for listitem in items %}
+			<div class="block">
+				<h4 class="item-name">{{listitem.item}}</h4><a href="/delete/{{listitem.id}}"><i class="fa fa-trash"></i></a>
+			</div>{% endfor %}
+		</div>{% endif %}
+	</div>
+	<script>
+	       function form(){
+	           document.getElementById('containid').style.height = '18px';
+	           document.getElementById('form').style.display = 'None';
+	           document.getElementById('changeclick').onclick = show;
+	           document.getElementById('containitems').style.bottom = '-1px';
+	       }
+	       function show(){
+	           document.getElementById('containid').style.height = '46px';
+	           document.getElementById('form').style.display = 'block';
+	           document.getElementById('changeclick').onclick = form;
+	           document.getElementById('containitems').style.bottom = '30px';
+	       }
+	</script>
+</body>
+</html>

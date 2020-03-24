@@ -1,0 +1,116 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: #00B4DB;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0083B0, #00B4DB);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.todo-box {
+	width: 400px;
+	margin: 0 auto;
+	padding: 50px;
+	text-align: center;
+}
+.contain {
+	background-color: white;
+	padding-bottom: 37px;
+	color: white;
+	background-color: #2980b9;
+	height: 46px;
+}
+li.heading {
+	float: left;
+	position: relative;
+	right: 33px;
+}
+ul.items li {
+	display: inline-block;
+}
+.todo-header {
+	font-size: 27px;
+	position: relative;
+	bottom: 23px;
+	left: 14px;
+}
+.header {
+	position: relative;
+	top: 17px;
+}
+li.icon {
+	float: right;
+	position: relative;
+	bottom: -2px;
+	right: 26px;
+}
+.form-dropdown {
+	width: 398px;
+	position: relative;
+	bottom: 29px;
+}
+input.input-box {
+	width: 380px;
+	position: relative;
+	left: 0px;
+	padding-left: 20px;
+	padding-bottom: 27px;
+	text-indent: 0px;
+	padding-top: 26px;
+	border: none;
+	background-color: #f7f7f7;
+}
+.contain-items {
+	background-color: white;
+	position: relative;
+	bottom: 29px;
+}
+.task {
+	float: left;
+	position: relative;
+	bottom: 19px;
+}
+.item-wrapper {
+	border: 1px solid;
+	position: relative;
+	top: 26px;
+	right: 21px;
+}
+::placeholder {
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+.block:nth-child(odd) {
+	/* padding: 20px; */
+	background-color: white;
+	position: relative;
+	right: 0px;
+	/* width: 100px; */
+	bottom: 1px;
+	padding: 10px;
+}
+.block:nth-child(even) {
+	background-color: #f7f7f7;
+	position: relative;
+	right: 0px;
+	bottom: 1px;
+	padding: 10px;
+}
+h4.item-name {
+	text-align: left;
+	position: relative;
+	left: 9px;
+	max-width: 300px;
+}
+i.fa.fa-trash {
+	float: right;
+	font-size: 23px;
+	position: relative;
+	right: 30px;
+	color: red;
+	bottom: 45px;
+}
