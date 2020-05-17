@@ -85,9 +85,11 @@ input.input-box {
 	top: 0px;
 }
 .block:nth-child(odd) {
+	/* padding: 20px; */
 	background-color: white;
 	position: relative;
 	right: 0px;
+	/* width: 100px; */
 	bottom: 1px;
 	padding: 10px;
 }
@@ -111,4 +113,11 @@ i.fa.fa-trash {
 	right: 30px;
 	color: red;
 	bottom: 45px;
+}
+
+.error {
+    text-align: center;
+    font-size: 20px;
+    color: red;
+    font-weight: 600;
 }
