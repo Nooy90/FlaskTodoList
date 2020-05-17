@@ -20,16 +20,19 @@
 			</div>
 		</div><!-- Input Drop Down-->
 		<div class="form-dropdown" id="form">
-			<form method="post">
+			<form method="post" action="/add-new-item">
 				<input class="input-box" name="listitem" placeholder="Add New Todo Item" required="" type="input">
 			</form>
-		</div>{% if items != [] %}
+		</div>{% if items != None %}
 		<div class="contain-items" id="containitems">
 			{% for listitem in items %}
 			<div class="block">
-				<h4 class="item-name">{{listitem.item}}</h4><a href="/delete/{{listitem.id}}"><i class="fa fa-trash"></i></a>
+				<h4 class="item-name">{{listitem}}</h4><a href="/delete/{{listitem}}"><i class="fa fa-trash"></i></a>
 			</div>{% endfor %}
 		</div>{% endif %}
+	</div>
+	<div class="error">
+		{{error}}
 	</div>
 	<script>
 	       function form(){
