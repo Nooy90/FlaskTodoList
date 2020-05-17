@@ -1,35 +1,25 @@
 from app import *
-from app.models import Todo
-
-@app.route('/', methods=['GET', 'POST'])
+from flask import render_template, url_for, redirect, session, request
+@app.route('/', methods=['GET'])
 def index():
-    if request.method == 'POST':
-        new_list_item = request.form.get('listitem')
-        add_item_to_db = Todo(item=new_list_item)
-        db.session.add(add_item_to_db)
-        db.session.commit()
+    if 'list' not in session:
+        session['list'] = []
 
-        return redirect(url_for('index'))
+    return render_template('index.html', items=session['list'])
 
-    if request.method == 'GET':
-        fetch_all_items = Todo.query.all()
-       
-        return render_template('index.html', items=fetch_all_items)
+@app.route('/add-new-item', methods=['POST'])
+def update_list():
+    current_list = session['list']
+    current_list.append(request.form.get('listitem'))
+    session['list'] = current_list
+    return redirect(url_for('index'))
+    
 
-        
-    return render_template('index.html')
+@app.route('/delete/<listitem>', methods=['GET'])
+def delete(listitem):
+    current_list = session['list']
+    current_list.remove(listitem)
+    session['list'] = current_list
 
-@app.route('/delete/<itemID>', methods=['GET'])
-def delete(itemID):
-    if itemID == 'all':
-        db.session.query(Todo).delete()
-        db.session.commit()
-        
-        return redirect(url_for('index'))
-
-
-    check_itemID_is_valid = Todo.query.filter_by(id=itemID).first()
-    db.session.delete(check_itemID_is_valid)
-    db.session.commit()
     
     return redirect(url_for('index'))
