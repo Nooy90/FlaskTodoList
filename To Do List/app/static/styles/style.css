@@ -85,11 +85,9 @@ input.input-box {
 	top: 0px;
 }
 .block:nth-child(odd) {
-	/* padding: 20px; */
 	background-color: white;
 	position: relative;
 	right: 0px;
-	/* width: 100px; */
 	bottom: 1px;
 	padding: 10px;
 }
