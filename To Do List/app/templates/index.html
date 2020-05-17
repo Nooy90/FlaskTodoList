@@ -8,31 +8,33 @@
 	<title>To Do List</title>
 </head>
 <body>
-	<div class="todo-box">
-		<div class="contain" id="containid">
-			<div class="header">
-				<ul class="items">
-					<li class="heading">
-						<h1 class="todo-header">Todo List</h1>
-					</li>
-					<li class="icon"><i class="fa fa-plus" id="changeclick" onclick="form()"></i></li>
-				</ul>
-			</div>
-		</div><!-- Input Drop Down-->
-		<div class="form-dropdown" id="form">
-			<form method="post" action="/add-new-item">
-				<input class="input-box" name="listitem" placeholder="Add New Todo Item" required="" type="input">
-			</form>
-		</div>{% if items != None %}
-		<div class="contain-items" id="containitems">
-			{% for listitem in items %}
-			<div class="block">
-				<h4 class="item-name">{{listitem}}</h4><a href="/delete/{{listitem}}"><i class="fa fa-trash"></i></a>
-			</div>{% endfor %}
-		</div>{% endif %}
-	</div>
-	<div class="error">
-		{{error}}
+	<div class="wrapper">
+		<div class="todo-box">
+			<div class="contain" id="containid">
+				<div class="header">
+					<ul class="items">
+						<li class="heading">
+							<h1 class="todo-header">Todo List</h1>
+						</li>
+						<li class="icon"><i class="fa fa-plus" id="changeclick" onclick="form()"></i></li>
+					</ul>
+				</div>
+			</div><!-- Input Drop Down-->
+			<div class="form-dropdown" id="form">
+				<form method="post" action="/add-new-item">
+					<input class="input-box" name="listitem" placeholder="Add New Todo Item" required="" type="input">
+				</form>
+			</div>{% if items != None %}
+			<div class="contain-items" id="containitems">
+				{% for listitem in items %}
+				<div class="block">
+					<h4 class="item-name">{{listitem}}</h4><a href="/delete/{{listitem}}"><i class="fa fa-trash"></i></a>
+				</div>{% endfor %}
+			</div>{% endif %}
+		</div>
+		<div class="error">
+			{{error}}
+		</div>
 	</div>
 	<script>
 	       function form(){
